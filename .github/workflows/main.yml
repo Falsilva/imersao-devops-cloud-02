@@ -23,7 +23,7 @@ jobs:
         file: ./kube-news/src/Dockerfile
         push: true
         tags:
-          falsilva/kube-news:${{ github.run_number }}
+          falsilva/kube-news:v${{ github.run_number }}
           falsilva/kube-news:latest
   CD:
     runs-on: ubuntu-latest
