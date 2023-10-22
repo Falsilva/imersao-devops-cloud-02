@@ -39,7 +39,7 @@ kind: Deployment
 metadata:
   name: kubenews
 spec:
-  replicas: 4
+  replicas: 10
   selector:
     matchLabels:
       app: kubenews
@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
         - name: kubenews
-          image: falsilva/kube-news:desafio_kubernetes
+          image: falsilva/kube-news:v1
           ports:
             - containerPort: 8080
           env:
@@ -73,5 +73,4 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
